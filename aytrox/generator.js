@@ -6,6 +6,8 @@ const option = require('../config.json').option;
 const consoleoutput = require('./consoleoutput');
 const empty = require('./empty_athena.json');
 
+
+if (option == 1 || 2) {
 consoleoutput.log(`Générateur créer par AYTROX`)
 
     class backend {
@@ -87,7 +89,7 @@ consoleoutput.log(`Générateur créer par AYTROX`)
                             'attributes': {
                                 'max_level_bonus': 99999,
                                 'level': 9999,
-                                'itemseen': true,
+                                'item_seen': true,
                                 'rnd_sel_cnt': 0,
                                 'xp': 9999,
                                 'variants': cosmeticVariants,
@@ -228,9 +230,8 @@ consoleoutput.log(`Générateur créer par AYTROX`)
         }
         this.updateAthena_banner();
         this.updateAthena_color();
-    }
+    };
 };
     backendClass = new backend();
     backendClass.init();
-
-        
+}
