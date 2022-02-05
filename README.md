@@ -18,7 +18,7 @@
 	<a href="https://github.com/AYTROX-OFFICIEL/NeoniteV2-Custom/archive/refs/heads/main.zip">Downloads</a> | 
 	<a href="https://github.com/AYTROX-OFFICIEL/NeoniteV2-Custom/issues">Report a Bug</a> |
 	<a href="https://dsc.gg/AYTROX">Discord Server</a> | 
-	<a href="https://neonitedev.github.io/?source=NeoniteV2-readme">Website</a>
+	<a href="https://www.neonitedev.live">Website</a>
 </p>
 
 
