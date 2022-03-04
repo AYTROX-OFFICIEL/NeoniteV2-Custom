@@ -1,5 +1,5 @@
 const NeoLog = require('./structs/NeoLog');
-const profile_generator = require('./aytrox/generator.js');
+const profile_generator = require('./aytrox/Générateur/generator.js');
 
 try {
 	var cookieParser = require("cookie-parser");
@@ -44,7 +44,6 @@ axios.get('https://raw.githubusercontent.com/NeoniteDev/NeoniteV2/main/package.j
 		}
 	}
 });
-profile_generator;
 
 function time() {
 (function () {
@@ -96,6 +95,7 @@ function time() {
 			require(`${__dirname}/.github/test/testing.js`)(app);
 			process.exit(0)
 		};
+		profile_generator;
 		// getRetailShop by ARWENT
 		await getRetailShop().then((res) => {
 			if (!res) { console.log("[Arwent] Un problème est survenue lors de l'obtention de la boutique."); }
