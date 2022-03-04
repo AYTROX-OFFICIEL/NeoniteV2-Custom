@@ -24,6 +24,10 @@ wss.on('listening', ws => {
     XmppPrint(`Le Bot est connecté au port> ${wss.options.port}.`)
 })
 
+wss.on('close', ws => {
+XmppPrint('le joueur est déconnecter.')
+})
+
 wss.on("connection", ws => {
 
     ws.on('close', () => {
@@ -31,8 +35,14 @@ wss.on("connection", ws => {
             global.xmppClients.splice(global.xmppClients.findIndex(x => x == global.xmppClients.find(x2 => x2.Ws == ws)))
         }
     })
+    const option = require('../aytrox/config.json').Rpc
+    if(option == true) {
+        const discordrpc = require('../aytrox/discord-rpc/index.js')
+        discordrpc
+    };
+ 
 
-    XmppPrint("New XMPP connection.")
+    XmppPrint("New XMPP connection.");
     var resource
     var accountId
     var token
@@ -703,6 +713,7 @@ wss.on("connection", ws => {
 })
 
 wss.on("error", error => {
+    discordrpc.close()
 
 })
 
