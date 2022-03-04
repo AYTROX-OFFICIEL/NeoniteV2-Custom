@@ -1,0 +1,250 @@
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Language" content="en">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Neonite V2 settings</title>
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+	<meta name="description" content="Fortnite lobby emulator!.">
+	<meta name="msapplication-tap-highlight" content="no">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+	<link href="./panel/main.css" rel="stylesheet">
+	<style type="text/css">
+		/* Chart.js */
+		@-webkit-keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		@keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		.chartjs-render-monitor {
+			-webkit-animation: chartjs-render-animation 0.001s;
+			animation: chartjs-render-animation 0.001s;
+		}
+	</style>
+	<style type="text/css">
+		/* Chart.js */
+		@-webkit-keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		@keyframes chartjs-render-animation {
+			from {
+				opacity: 0.99
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		.chartjs-render-monitor {
+			-webkit-animation: chartjs-render-animation 0.001s;
+			animation: chartjs-render-animation 0.001s;
+		}
+	</style>
+	<style>
+		body {
+			color: #fff;
+			font-family: Rubik, sans-serif;
+			background: rgb(117,23,244);
+            background: linear-gradient(127deg, rgba(117,23,244,1) 80%, rgba(153,41,244,234,1) 88%);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="app-main">
+		<div class="app-main__outer">
+			<div class="app-main__inner">
+				<div class="app-page-title">
+					<div class="page-title-wrapper">
+						<div class="page-title-heading">
+							<div class="page-title-icon">
+								<img src="./panel/icon.png" alt="Simply Easy Learning" width="60" height="60">
+							</div>
+							</div>
+							<div>Personnalise Tes Réglages
+								<br>
+								<a style="color:rgb(255, 255, 255)" href="https://discord.gg/DJ6VUmD">Neonite Discord</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane tabs-animation fade active show" id="tab-content-1" role="tabpanel">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="main-card mb-3 card">
+								<div class="card-body">
+									<h5 class="card-title">personnalise tes réglages</h5>
+									<div>
+										<div class="input-group">
+											<div class="input-group-prepend"><span
+													class="input-group-text">VBucks</span></div>
+											<input id="vbx" placeholder="number" type="number" class="form-control"
+												min="-99999" max="99999">
+											<div class="input-group-append">
+												<button onclick="httpGet('vbx', vbx.value)"
+													class="btn btn-secondary">sauvegarder</button>
+											</div>
+										</div>
+										<br>
+										<div class="input-group">
+											<div class="input-group-prepend"><span
+													class="input-group-text">Level</span></div>
+											<input id="level" placeholder="number" type="number" class="form-control"
+												min="1" max="999">
+											<div class="input-group-append">
+												<button onclick="httpGet('level', level.value)"
+													class="btn btn-secondary">sauvegarder</button>
+											</div>
+										</div>
+										<br>
+										<div class="input-group">
+											<div class="input-group-prepend"><span
+													class="input-group-text">étoile de combat</span></div>
+											<input id="battlestars" placeholder="number" type="number" class="form-control"
+												min="0" max="950">
+											<div class="input-group-append">
+												<button onclick="httpGet('battlestars', battlestars.value)"
+													class="btn btn-secondary">sauvegarder</button>
+											</div>
+										</div>
+										<br>
+										<div class="input-group">
+											<div class="input-group-prepend"><span
+													class="input-group-text">Xp</span></div>
+											<input id="xp" placeholder="number" type="number" class="form-control"
+												min="0" max="9999999">
+											<div class="input-group-append">
+												<button onclick="httpGet('xp', xp.value)"
+													class="btn btn-secondary">sauvegarder</button>
+											</div>
+										</div>
+										<br>
+										<div class="input-group">
+											<div class="input-group-prepend"><span
+													class="input-group-text">Couronnes</span></div>
+											<input id="couronnes" placeholder="number" type="number" class="form-control"
+												min="0" max="99999">
+											<div class="input-group-append">
+												<button onclick="httpGet('couronnes', couronnes.value)"
+													class="btn btn-secondary">sauvegarder</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="jvectormap-tip"></div>
+			<script>
+				$(function () {
+					$("#vbx").keyup(function () {
+						var max = parseInt($(this).attr('max'));
+						var min = parseInt($(this).attr('min'));
+						if ($(this).val() > max) {
+							$(this).val(max);
+						} else if ($(this).val() < min) {
+							$(this).val(min);
+						}
+					});
+				});
+
+				$(function () {
+				$("#level").keyup(function () {
+						var max = parseInt($(this).attr('max'));
+						var min = parseInt($(this).attr('min'));
+						if ($(this).val() > max) {
+							$(this).val(max);
+						} else if ($(this).val() < min) {
+							$(this).val(min);
+						}
+					});
+				});
+
+				$(function () {
+					$("#battlestars").keyup(function () {
+						var max = parseInt($(this).attr('max'));
+						var min = parseInt($(this).attr('min'));
+						if ($(this).val() > max) {
+							$(this).val(max);
+						} else if ($(this).val() < min) {
+							$(this).val(min);
+						}
+					});
+				});
+
+				$(function () {
+					$("#xp").keyup(function () {
+						var max = parseInt($(this).attr('max'));
+						var min = parseInt($(this).attr('min'));
+						if ($(this).val() > max) {
+							$(this).val(max);
+						} else if ($(this).val() < min) {
+							$(this).val(min);
+						}
+					});
+				});
+
+				$(function () {
+					$("#couronnes").keyup(function () {
+						var max = parseInt($(this).attr('max'));
+						var min = parseInt($(this).attr('min'));
+						if ($(this).val() > max) {
+						   $(this).val(max);
+						} else if ($(this).val() < min) {
+							$(this).val(min);
+						}
+					});
+				});
+
+				function httpGet(command, value) {
+					var xmlHttp = new XMLHttpRequest();
+					const queryString = window.location.search;
+					const urlParams = new URLSearchParams(queryString);
+					const user = urlParams.get('user')
+					xmlHttp.open("GET", `/api?user=${user}&command=${command}&value=${value}`,
+						false); // false for synchronous request
+					xmlHttp.send(null);
+					return alert(xmlHttp.responseText)
+				}
+			</script>
+</body>
+
+</html>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>      Made by Kemo | Add and edit by AYTROX</p>

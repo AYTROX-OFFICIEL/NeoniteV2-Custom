@@ -1,6 +1,6 @@
 const { default: axios } = require("axios");
 const { application } = require('express');
-const actus = require ('../config.json').new;
+const actus = require ('../aytrox/config.json').new;
 
 
 /**
@@ -19,6 +19,7 @@ if (actus == 1) {
                 }
             })).data
             const motds = (await axios.get("https://fortnite-api.com/v2/news/br?language=fr")).data.data.motds;
+            const video = (await axios.get("https://api.nitestats.com/v1/epic/prm/motd?lang=fr")).data.contentItems
     
             fortnite_game.battleroyalenewsv2.news.motds = [];
             // Ajout du message dans le salon par AYTROX
@@ -47,7 +48,7 @@ if (actus == 1) {
                     "image": motd.image,
                     "tileImage": motd.tileImage,
                     "tabTitleOverride": motd.tabTitle,
-                    "entryType": "Item",
+                    "entryType": "Text",
                     "hidden": false,
                     "videoMute": false,
                     "_type": "CommonUI Simple Message MOTD",
@@ -70,10 +71,6 @@ if (actus == 1) {
     
             res.send(fortnite_game), console.log('[ARWENT] Les actualité du jour on été chargé avec succès');
         })
-        //implementation needed in the future, response example: https://api.nitestats.com/v1/epic/prm/motd
-        /*app.post("/api/v1/fortnite-br/surfaces/motd/target", (req, res) => {
-            res.status(404).end();
-        })*/
     }
 };
     if (actus == 2) {
@@ -152,7 +149,7 @@ if (actus == 1) {
                         "motds": [{
                             "entryType": "Website",
                             "image": `http://127.0.0.1:${port}/neonitev2-customnew1920.png`,
-                            "tileImage": `http://127.0.0.1:${port}/neonitev2-customnew2050.png`,
+                            "tileImage": `http://127.0.0.1:${port}/neonitev2-customnew2150.png`,
                             "videoMute": false,
                             "hidden": false,
                             "tabTitleOverride": "Neonite V2 Customized",
@@ -172,8 +169,8 @@ if (actus == 1) {
                         },
                     {
                         "entryType": "Text",
-                        "image": `http://127.0.0.1:${port}/NeoniteWallpaper1920x1080.png`,
-                        "tileImage": `http://127.0.0.1:${port}/Neonite1024.png`,
+                        "image": `http://127.0.0.1:${port}/neonite-news1920.png`,
+                        "tileImage": `http://127.0.0.1:${port}/neonite-news2150.png`,
                         "videoMute": false,
                         "hidden": false,
                         "tabTitleOverride": "Neonite",
@@ -205,13 +202,13 @@ if (actus == 1) {
                     "backgrounds": {
                         "backgrounds": [
                             {
-                                "backgroundimage": `http://127.0.0.1:${port}/st.png`,
+                                "backgroundimage": `http://127.0.0.1:${port}/Neonite-CustomLobby.png`,
                                 "stage": "defaultnotris",
                                 "_type": "DynamicBackground",
                                 "key": "lobby"
                             },
                             {
-                                "backgroundimage": `http://127.0.0.1:${port}/NeoniteLobby.png`,
+                                "backgroundimage": `http://127.0.0.1:${port}/NeoniteShop.png`,
                                 "stage": "defaultnotris",
                                 "_type": "DynamicBackground",
                                 "key": "vault"
@@ -232,7 +229,7 @@ if (actus == 1) {
                     "itemsList": {
                         "_type": "ShopCarouselItemList",
                         "items": [{
-                            "tileImage": `http://127.0.0.1:${port}/NeoniteWallpaper1920x1080.png`,
+                            "tileImage": `http://127.0.0.1:${port}/neonite-news1920.png`,
                             "fullTitle": "AYTROX-ARWENT",
                             "hidden": false,
                             "_type": "ShopCarouselItem",
@@ -252,7 +249,7 @@ if (actus == 1) {
 
             content.battlepasspurchase = {
                     "battlePassPurchaseDisclaimer": "Neonite V2 Custom by AYTROX & ARWENT, si il y a des beugs de langue 'Fr' venez sur mon serveur: https://dsc.gg/AYTROX, (Il y aura toujours la dernière version de Neonite V2 sur mon github.)",
-                    "battlePassPurchaseBackgroundURL": `http://127.0.0.1:${port}/neonitev2-customnew2050.png`,
+                    "battlePassPurchaseBackgroundURL": `http://127.0.0.1:${port}/neonitev2-customnew2150.png`,
                     "jcr:isCheckedOut": true,
                     "_title": "BattlePassPurchase",
                     "battlePassPurchaseConfirmBackgroundURL": content.battlepasspurchase.battlePassPurchaseConfirmBackgroundURL,
@@ -270,12 +267,12 @@ if (actus == 1) {
                 "_type": "Crew Benefits"
                     },
                     "jcr:isCheckedOut": true,
-                    "crewDisclaimer": "Vous serez automatiquement débité chaque mois. Neonite V2 Custom by AYTROX & ARWENT Si il y a des beugs de lang \"Fr\" venez sur mon discord: https://dsc.gg/AYTROX",
+                    "crewDisclaimer": "Neonite V2 Custom by AYTROX & ARWENT Si il y a des beugs de lang \"Fr\" venez sur mon discord: https://dsc.gg/AYTROX",
                     "defaultData": {
                         "backgroundURL": content.crewscreendata.defaultData.backgroundURL,
                         "_type": "Crew Default Data",
                         "description": "Recevez le Passe de combat de la saison en cours et d'autres avantages ! Sélectionnez les cases pour en savoir plus !",
-                        "title": "Abonnement au Club"
+                        "title": "Neonite-V2 Customized by AYTROX & ARWENT"
                     },
                     "_title": "crewscreendata",
                     "_noIndex": false,
@@ -286,8 +283,8 @@ if (actus == 1) {
                 }
 
             content._suggestedPrefetch = [
-                    `http://127.0.0.1:${port}/NeoniteWallpaper1920x1080.png`,
-                    `http://127.0.0.1:${port}/Neonite1024.png`
+                    `http://127.0.0.1:${port}/neonitev2-customnew1920.png`,
+                    `http://127.0.0.1:${port}/neonitev2-customnew2150.png`
             ]
 
         res.send(content)
