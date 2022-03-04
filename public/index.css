@@ -19,6 +19,14 @@ button.npp {
     letter-spacing: 1px;
     transition: all 150ms linear;
   }
+
+.textName {
+    transition: all 0.6s ease;
+    cursor: default;
+}
+.textName:hover{
+    color: rgb(255, 0, 0);
+}
   
 button.npp:hover {
     background: darken(red, 1.5%);

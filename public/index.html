@@ -3,16 +3,20 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Neonite V2</title>
+    <title>Neonite V2 - Custom by AYTROX & ARWENT</title>
     <link rel="stylesheet" type="text/css" href="index.css" media="screen" />
-
-    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="favicon-n.ico"/>
+    <script>
+        function url() {
+          var x = document.getElementById("username").value;
+          window.open(`/Panel?user=${x}`)
+        }
+        </script>
 </head>
-
 <body style="padding: 50px;">
     <script>
-        function Npp() {
-            window.location.href = 'https://github.com/NeoniteDev/NeonitePP'
+        function cosmetics() {
+            window.open('https://aytrox.wixsite.com/website/neonitev2-custom')
         }
 
         function discord() {
@@ -22,32 +26,41 @@
         function Download() {
             window.open('launcher.zip', '_blank')
         }
-    </script>
-    <div class="title">
-        <p class="title">Neonite V2</p>
+        </script>
+    <div style="text-align: center; opacity: 0.7;  width: 100%; height: auto;">
+        <p class="textName" style="font-family:'burbank'; font-size: 80px; text-shadow: 2px 2px #02fff2;">Neonite V2<br>Custom by AYTROX & ARWENT
+        </p>
     </div>
-    <div class="item button-100 buttons_area">
-
-        <button onclick="Npp()">Check out Neonite++</button>
-        <br><br>
-        <button onclick="Download()">Download Launcher</button>
-        <br><br>
-        <button onclick="discord()">Join Discord</button>
+    <div class="item button-100" style="--bg-color:#001aff; text-align: center;">
+        <button onclick="Download()">Installer le Launcher
+        </button>
         <br>
         <br>
+        <button onclick="discord()">Discord
+        </button>
+        <br>
+        <br>
+        <button onclick = "cosmetics()">Télécharger les nouveaus Cosmetics
+        </button>
+        <br>
+        <br>
+        <input type="text" placeholder="PSEUDO" id="username" class="username" name="username" required>
+        <button onclick="url()">Se connecter
+        </button>
+        <br><br>
         <div class="name">Use code Neonite in the item shop. #EpicCreator</a></div>
         <br>
         <div class="name" style="padding: 20px">Made by: <a href="https://twitter.com/xkem0x" style="color:white"
                 target="_blank">kemo </a></div>
-        <div class="name">Maintained by: <a href="https://twitter.com/TheBeatYT_evil" style="color:white"
-                target="_blank">Beat YT</a></div>
-
+        <div class="name">Customized by: <a href="https://aytrox.com" style="color: white;"
+            target="_blank">AYTROX</a> & ARWENT</div>
         <br>
-        <div class="footer" style="font-size: 10px">
-            <p>NOTE: This project is not Affiliated, Associated, Authorized, Endorsed by, or in any way officially
-                connected with EpicGames</p>
-            <p>Epic, Epic Games and Fortnite are trademarks or registered trademarks of Epic Games, Inc. in the United
-                States of America and elsewhere.</p>
+        <div class="footer"
+            style="position: fixed; left: 0; bottom: 0; width: 100%; background-color: rgba(10, 1, 1, 0.158); text-align: center;">
+            <p>REMARQUE: Ce projet n'est pas affilié, associé, autorisé, approuvé par ou de quelque manière que ce soit officiellement
+                connecté avec EpicGames</p>
+            <p>Epic, Epic Games et Fortnite sont des marques ou des marques déposées d'Epic Games, Inc. aux États-Unis.
+                États d'Amérique et d'ailleurs.</p>
         </div>
     </div>
 
